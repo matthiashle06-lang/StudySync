@@ -12,4 +12,4 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
 # Start the Spring Boot application and force the MongoDB URI injection
-ENTRYPOINT ["sh", "-c", "java -jar app.jar --spring.data.mongodb.uri=$MONGODB_URI"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
