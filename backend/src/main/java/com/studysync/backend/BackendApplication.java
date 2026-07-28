@@ -7,11 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BackendApplication {
 
     public static void main(String[] args) {
-        // Intercept the environment variable and force it into Spring's system properties
-        String mongoUri = System.getenv("MONGODB_URI");
-        if (mongoUri != null && !mongoUri.isBlank()) {
-            System.setProperty("spring.data.mongodb.uri", mongoUri);
-        }
+        // HARDCODED TEST: Bypassing everything.
+        String hardcodedUri = "mongodb+srv://matthiasbatumalai_db_user:92qeI08S5gfJho1e@studysync.bp32bfd.mongodb.net/studysync?appName=StudySync";
+        System.setProperty("spring.data.mongodb.uri", hardcodedUri);
 
         SpringApplication.run(BackendApplication.class, args);
     }
